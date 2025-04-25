@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+option go_package = "apps/common/facade/storageapi";
+
+package storage.v1;

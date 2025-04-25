@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "apps/common/facade/captchaapi";
+
+package captcha.v1;
+
+message ValidationRequest {
+  string version = 1;
+  map<string, string> payload = 2;
+}
+
+message ValidationReply {
+  bool success = 1;
+  string message = 2;
+}
+
+service Validation {
+  rpc Validate(ValidationRequest) returns (ValidationReply);
+}
