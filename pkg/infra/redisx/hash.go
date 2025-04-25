@@ -3,8 +3,19 @@ package redisx
 import (
 	"context"
 	"github.com/redis/go-redis/v9"
+	"sync"
 	"time"
 )
+
+var hashCommand *HashCommand
+var hashCommandInit sync.Once
+
+func Hash() *HashCommand {
+	hashCommandInit.Do(func() {
+		hashCommand = &HashCommand{client: getInstance()}
+	})
+	return hashCommand
+}
 
 type HashCommand struct {
 	client redis.Cmdable

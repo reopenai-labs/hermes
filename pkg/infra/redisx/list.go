@@ -3,8 +3,19 @@ package redisx
 import (
 	"context"
 	"github.com/redis/go-redis/v9"
+	"sync"
 	"time"
 )
+
+var listCommand *ListCommand
+var listCommandInit sync.Once
+
+func List() *ListCommand {
+	listCommandInit.Do(func() {
+		listCommand = &ListCommand{client: getInstance()}
+	})
+	return listCommand
+}
 
 type ListCommand struct {
 	client redis.Cmdable

@@ -11,25 +11,25 @@ import (
 //-------------------------
 
 func ExpireTime(ctx context.Context, key string) *redis.DurationCmd {
-	return instance.ExpireTime(ctx, key)
+	return getInstance().ExpireTime(ctx, key)
 }
 
 func Expire(ctx context.Context, key string, expiration time.Duration) *redis.BoolCmd {
-	return instance.Expire(ctx, key, expiration)
+	return getInstance().Expire(ctx, key, expiration)
 }
 
 func ExpireNX(ctx context.Context, key string, expiration time.Duration) *redis.BoolCmd {
-	return instance.ExpireNX(ctx, key, expiration)
+	return getInstance().ExpireNX(ctx, key, expiration)
 }
 
 func ExpireXX(ctx context.Context, key string, expiration time.Duration) *redis.BoolCmd {
-	return instance.ExpireXX(ctx, key, expiration)
+	return getInstance().ExpireXX(ctx, key, expiration)
 }
 
 func ExpireGT(ctx context.Context, key string, expiration time.Duration) *redis.BoolCmd {
-	return instance.ExpireLT(ctx, key, expiration)
+	return getInstance().ExpireLT(ctx, key, expiration)
 }
 
 func ExpireLT(ctx context.Context, key string, expiration time.Duration) *redis.BoolCmd {
-	return instance.ExpireLT(ctx, key, expiration)
+	return getInstance().ExpireLT(ctx, key, expiration)
 }

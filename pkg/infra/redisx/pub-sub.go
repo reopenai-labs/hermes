@@ -3,7 +3,18 @@ package redisx
 import (
 	"context"
 	"github.com/redis/go-redis/v9"
+	"sync"
 )
+
+var pubSubCommand *PubSubCommand
+var pubSubCommandInit sync.Once
+
+func PubSub() *PubSubCommand {
+	pubSubCommandInit.Do(func() {
+		pubSubCommand = &PubSubCommand{client: getInstance()}
+	})
+	return pubSubCommand
+}
 
 //-------------------------
 // pub-sub API

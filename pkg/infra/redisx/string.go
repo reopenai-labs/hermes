@@ -3,8 +3,19 @@ package redisx
 import (
 	"context"
 	"github.com/redis/go-redis/v9"
+	"sync"
 	"time"
 )
+
+var stringCommand *StringCommand
+var stringCommandInit sync.Once
+
+func String() *StringCommand {
+	stringCommandInit.Do(func() {
+		stringCommand = &StringCommand{client: getInstance()}
+	})
+	return stringCommand
+}
 
 type StringCommand struct {
 	client redis.Cmdable

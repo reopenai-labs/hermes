@@ -3,7 +3,18 @@ package redisx
 import (
 	"context"
 	"github.com/redis/go-redis/v9"
+	"sync"
 )
+
+var pipelineCommand *PipelineCommand
+var pipelineCommandInit sync.Once
+
+func Pipeline() *PipelineCommand {
+	pipelineCommandInit.Do(func() {
+		pipelineCommand = &PipelineCommand{client: getInstance().Pipeline()}
+	})
+	return pipelineCommand
+}
 
 type PipelineCommand struct {
 	client redis.Pipeliner

@@ -3,10 +3,20 @@ package redisx
 import (
 	"context"
 	"github.com/redis/go-redis/v9"
+	"sync"
 	"time"
 )
 
-// ZSetCommand 是 Redis ZSet 操作的封装结构体
+var zSetCommand *ZSetCommand
+var zSetCommandInit sync.Once
+
+func ZSet() *ZSetCommand {
+	zSetCommandInit.Do(func() {
+		zSetCommand = &ZSetCommand{client: getInstance()}
+	})
+	return zSetCommand
+}
+
 type ZSetCommand struct {
 	client redis.Cmdable
 }
