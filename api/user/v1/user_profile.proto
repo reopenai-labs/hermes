@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "apps/user/facade/userapi";
+
+package user.v1;
+
+message QueryProfileRequest {
+  string username = 1;
+}
+
+message UserProfileReply {
+  repeated UserProfileDetail items = 1;
+}
+
+message UserProfileDetail {
+  int64 Id = 1;
+  string username = 2;
+}
+
+service UserProfile {
+  rpc QueryProfiles(QueryProfileRequest) returns (UserProfileReply);
+}

@@ -15,6 +15,19 @@ func (Self *Error) Error() string {
 	return Self.Err.Error()
 }
 
+func NewCodeError(code string) *Error {
+	return &Error{
+		Code: code,
+	}
+}
+
+func NewError(code string, args map[string]string) *Error {
+	return &Error{
+		Code: code,
+		Args: args,
+	}
+}
+
 func WithError(err error) *Error {
 	return &Error{
 		Err:  err,

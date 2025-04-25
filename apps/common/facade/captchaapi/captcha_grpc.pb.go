@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v5.29.3
-// source: api/common/v1/captcha/captcha.proto
+// source: api/common/v1/captcha.proto
 
 package captchaapi
 
@@ -117,5 +117,5 @@ var Validation_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "api/common/v1/captcha/captcha.proto",
+	Metadata: "api/common/v1/captcha.proto",
 }

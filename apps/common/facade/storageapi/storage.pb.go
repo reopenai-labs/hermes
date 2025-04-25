@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v5.29.3
-// source: api/common/v1/storage/storage.proto
+// source: api/common/v1/storage.proto
 
 package storageapi
 
@@ -20,15 +20,15 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-var File_api_common_v1_storage_storage_proto protoreflect.FileDescriptor
+var File_api_common_v1_storage_proto protoreflect.FileDescriptor
 
-const file_api_common_v1_storage_storage_proto_rawDesc = "" +
+const file_api_common_v1_storage_proto_rawDesc = "" +
 	"\n" +
-	"#api/common/v1/storage/storage.proto\x12\n" +
+	"\x1bapi/common/v1/storage.proto\x12\n" +
 	"storage.v1B\x1fZ\x1dapps/common/facade/storageapib\x06proto3"
 
-var file_api_common_v1_storage_storage_proto_goTypes = []any{}
-var file_api_common_v1_storage_storage_proto_depIdxs = []int32{
+var file_api_common_v1_storage_proto_goTypes = []any{}
+var file_api_common_v1_storage_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -36,25 +36,25 @@ var file_api_common_v1_storage_storage_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_api_common_v1_storage_storage_proto_init() }
-func file_api_common_v1_storage_storage_proto_init() {
-	if File_api_common_v1_storage_storage_proto != nil {
+func init() { file_api_common_v1_storage_proto_init() }
+func file_api_common_v1_storage_proto_init() {
+	if File_api_common_v1_storage_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_api_common_v1_storage_storage_proto_rawDesc), len(file_api_common_v1_storage_storage_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_api_common_v1_storage_proto_rawDesc), len(file_api_common_v1_storage_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_api_common_v1_storage_storage_proto_goTypes,
-		DependencyIndexes: file_api_common_v1_storage_storage_proto_depIdxs,
+		GoTypes:           file_api_common_v1_storage_proto_goTypes,
+		DependencyIndexes: file_api_common_v1_storage_proto_depIdxs,
 	}.Build()
-	File_api_common_v1_storage_storage_proto = out.File
-	file_api_common_v1_storage_storage_proto_goTypes = nil
-	file_api_common_v1_storage_storage_proto_depIdxs = nil
+	File_api_common_v1_storage_proto = out.File
+	file_api_common_v1_storage_proto_goTypes = nil
+	file_api_common_v1_storage_proto_depIdxs = nil
 }
